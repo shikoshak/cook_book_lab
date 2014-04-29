@@ -1,0 +1,18 @@
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to('New Ingredient', new_ingredient_path) %>
+  </li>
+</ul>
+
+
+<% @ingredient.each do |ingredient| %>
+  <div class="row">
+     <div class="col-md-4 col-sm-4">
+      <p class="lead"><%= link_to(ingredient.name, ingredient) %>
+      <p><%= ingredient.name %>
+      <p><%= ingredient.brand %>
+      
+      <!--  TODO: Add code to display ingredients!å  -->
+    </div>
+  </div>
+<% end %>

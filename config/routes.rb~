@@ -2,6 +2,7 @@ Cookbook::Application.routes.draw do
   resources :recipes, :ingredients
 
   root to: 'recipes#index'
+  root to: 'ingredients#index'
 end
 
 

@@ -1,9 +1,10 @@
 <ul class="nav nav-pills">
   <li>
     <%= link_to('New Recipe', new_recipe_path) %>
+   </br>
+    <%= link_to('New Ingredient', new_ingredient_path) %>
   </li>
 </ul>
-
 
 <% @recipes.each do |recipe| %>
   <div class="row">
