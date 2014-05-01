@@ -6,15 +6,16 @@
   </li>
 </ul>
 
-<#% @recipes.each do |recipe| %>
-  <#div class="row">
-     <#div class="col-md-4 col-sm-4">
-      <#p class="lead"><%= link_to(recipe.name, recipe) %>
-      <#p><%= recipe.course %>
-      <#p><%= recipe.cooktime %>
-      <#p><%= recipe.servingsize %>
-      <#p><%= recipe.instructions %>
-      <#!--  TODO: Add code to display ingredients!å  -->
-    <#/div>
-  <#/div>
-<#% end %>
+<% @recipes.each do |recipe| %>
+  <div class="row">
+     <div class="col-md-4 col-sm-4">
+      <p class="lead"><%= link_to(recipe.name, recipe) %>
+      <p><%= recipe.course %>
+      <p><%= recipe.cooktime %>
+      <p><%= recipe.servingsize %>
+      <p><%= recipe.instructions %>
+      <p><%= recipe.ingredient.image, size:"40x40" %> 
+      <!--  TODO: Add code to display ingredients!å  -->
+    </div>
+  </div>
+<% end %>

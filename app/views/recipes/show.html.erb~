@@ -12,6 +12,10 @@
     <p><%= @recipe.cooktime %>
     <p><%= @recipe.servingsize %>
     <p><%= @recipe.instructions %>
+    <p><%= @recipe.ingredients.each do |ingredient| %>
+    <p><%=  ingredient.name %>
+    <p><%= image_tag(ingredient.image,  size: "40x40") %>
+        <% end %>
   </div>
 
   <!-- TODO: Display the ingredients in the show page -->
