@@ -6,6 +6,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ing_meas = @recipe.ingredients_measurements.build
+    @ing_meas.build_ingredient
   end
 
   def create
@@ -35,6 +37,7 @@ class RecipesController < ApplicationController
 
   private
     def recipe_params
-      params.require(:recipe).permit(:name, :course, :cooktime, :servingsize, :instructions)
+       # raise params.inspect
+      params.require(:recipe).permit(:name, :course, :cooktime, :servingsize, :instructions, ingredients_measurements_attributes: [:quantity, ingredient_attributes: [:name, :brand] ])
     end
 end

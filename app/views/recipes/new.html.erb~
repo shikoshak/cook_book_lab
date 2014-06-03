@@ -1,5 +1,0 @@
-<h1>New Recipe</h1>
-<%= render :partial => 'form' %>
-</br>
-<h1>New Ingredient</h1>
-<%= render :partial => 'form' %>

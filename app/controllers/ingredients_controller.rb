@@ -1,13 +1,13 @@
 class IngredientsController < ApplicationController
   
   before_action :laod_ingredient, only: [:show, :edit, :update, :destroy]
-  
   def index
-    @ingredient = Recipe.all
+    @ingredients = Ingredient.all
   end
 
   def new
     @ingredient = Ingredient.new
+    @ingredient.ingredients_measurements.build
   end
 
   def create
@@ -16,24 +16,22 @@ class IngredientsController < ApplicationController
   end
 
   def show
-  laod_ingredient
+  
   end
 
   def edit
-    laod_ingredient
   end
 
   def update
-   laod_ingredient
     ingredient.update_attributes ingredient_params
     redirect_to(ingredient)
   end
   
   def destroy
-    laod_ingredient
     ingredient.delete
     redirect_to(ingredient_path)
   end
+
 
   private
     def ingredient_params

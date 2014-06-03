@@ -14,9 +14,25 @@
   <%= f.label :instructions %>
   <%= f.text_area :instructions, :cols => 40, :rows => 10 %>
   <br>
-   ..< f.label :"image" %>
-  ... < f.text_field :image %>
+  Ingredients:
+  <ul>
+    <%=f.fields_for :ingredients_measurements do |ingredients_measurements_form| %>
+    <li>
+        <%= ingredients_measurements_form.label :quantity %>
+        <%= ingredients_measurements_form.text_field :quantity %>
+    </li>
 
+    <%= ingredients_measurements_form.fields_for :ingredient do |ingredients_form| %>
+    <li>
+        <%= ingredients_form.label :name %>
+        <%= ingredients_form.text_field :name %>
+
+        <%= ingredients_form.label :brand %>
+        <%= ingredients_form.text_field :brand%>
+
+    <% end %>
+    <% end %>
+  </ul>
   <p><p>
   <%= f.submit  class: "btn btn-primary" %>
 <% end %>
